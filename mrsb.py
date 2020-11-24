@@ -2,7 +2,7 @@ import keyring
 from keyrings.alt import Windows
 import os
 import platform
-from selenium import webdriver
+from selenium import webdriver, common
 
 if platform.system() == 'Windows':
     path = 'chromedriver.exe'
@@ -13,8 +13,8 @@ else:
     path = ''
 
 if not os.path.exists("mrsb.config"):
+    account = input("输入学号：")
     with open("mrsb.config", 'w') as f:
-        account = input("输入学号：")
         if keyring.get_password('mrsb', account) == None:
             password = input("输入密码：")
         else:
@@ -37,5 +37,11 @@ driver.find_element_by_id('mobilePassword').send_keys(password)
 driver.find_element_by_id("load").click()
 driver.find_element_by_id("mrsb").click()
 driver.execute_script("add()")
-driver.find_element_by_id("txfscheckbox").click()
+while True:
+    try:
+        driver.find_element_by_id("txfscheckbox").click()
+        break
+    except common.exceptions.NoSuchElementException:
+        pass
 driver.execute_script("save()")
+driver.quit()
