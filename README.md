@@ -12,7 +12,7 @@
 
 ## 使用可执行文件
 
-你需要以默认位置安装最新版本的chrome，至项目发布所使用的是Google Chrome Version 87.0.4280.66 (Official Build) (64-bit) 务必保证chrome为最新版本
+你需要以默认位置安装版本号大于等于86的Chrome，至项目发布所使用的是Google Chrome Version 87.0.4280.66 (Official Build) (64-bit) 尽量保证chrome为最新版本
 
 下载 [Release](https://github.com/VinKK1998/hit-mrsb/releases/tag/v1.22474487139) 中的zip并解压，双击执行mrsb.exe，请允许应用通过防火墙。
 
@@ -36,7 +36,7 @@ Mac User：
 pip3 install keyring keyring.alt selenium
 ```
 
-你需要以默认位置安装最新版本的chrome，至项目发布所使用的是Google Chrome Version 87.0.4280.66 (Official Build) (64-bit)
+你需要以默认位置安装版本号大于等于86的Chrome，至项目发布所使用的是Google Chrome Version 87.0.4280.66 (Official Build) (64-bit) 尽量保证chrome为最新版本
 
 克隆这个repo并启动脚本：
 
