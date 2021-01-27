@@ -8,7 +8,10 @@ if platform.system() == 'Windows':
     path = 'chromedriver.exe'
     keyring.set_keyring(Windows.RegistryKeyring())
 elif platform.system() == 'Mac':
-    path = 'chromedriver'
+    if platform.machine() == "arm64":
+        path = 'chromedriver_m1'
+    else:
+        path = 'chromedriver'
 else:
     path = ''
 
@@ -39,7 +42,7 @@ driver.find_element_by_id("mrsb").click()
 driver.execute_script("add()")
 while True:
     try:
-        driver.find_element_by_id("txfscheckbox").click()
+        driver.find_element_by_id("checkbox").click()
         break
     except common.exceptions.NoSuchElementException:
         pass
